@@ -18,15 +18,24 @@ class _CustomDemoState extends State<CustomDemo> {
     return Scaffold(
       backgroundColor: ConstantsString().bgColor,
       appBar: AppBar(
-        toolbarHeight: Sizes.size3x,
+        title: Column(
+          children: [
+            Text(
+              ConstantsString.foodApp,
+              textAlign: TextAlign.start,
+              style: Theme.of(context).textTheme.headlineMedium,
+            )
+          ],
+        ),
+        toolbarHeight: Sizes.size4x,
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 40),
+        padding: PaddingClass.horizontal2x,
         child: Column(
           children: [
             Expanded(flex: 35, child: _ChangeFoodColumn()),
             const Spacer(
-              flex: 15,
+              flex: 10,
             ),
             Expanded(
                 flex: 12,
@@ -60,15 +69,10 @@ class _CustomDemoState extends State<CustomDemo> {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            IconButton(
-                onPressed: () {
-                  _foodChangeBack();
-                },
-                icon: const Icon(Icons.chevron_left)),
+            CoreIconButton(onPressed: _foodChangeBack, icon: const Icon(Icons.chevron_left_outlined)),
             Card(
               color: Colors.transparent,
-              elevation: 1,
-              shadowColor: const Color.fromARGB(255, 183, 181, 181),
+              elevation: 0,
               shape: const CircleBorder(),
               child: Container(
                 child: Image.network(
@@ -79,18 +83,14 @@ class _CustomDemoState extends State<CustomDemo> {
                 ),
               ),
             ),
-            IconButton(
-                onPressed: () {
-                  _foodChangeForward();
-                },
-                icon: const Icon(Icons.chevron_right)),
+            CoreIconButton(onPressed: _foodChangeForward, icon: const Icon(Icons.chevron_right_outlined))
           ],
         ),
-        const Divider(height: 40),
         Text(
           ConstantsString().foodList.values.toList()[_currentFoodIndex],
           style: const TextStyle(fontSize: Sizes.size),
         ),
+        Divider(height: 40, color: ConstantsString().secondColor),
       ],
     );
   }

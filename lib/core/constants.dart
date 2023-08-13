@@ -11,7 +11,8 @@ class ConstantsString {
   static const String spaghetti = "Spaghetti";
   static const String beyti = "Beyti";
   static const String letsExplore = "Let's Explore";
-  static const String weHaveSpecialFood = "We Have Special Food";
+  static const String weHaveSpecialFood = "We Have\nSpecial Food";
+  static const String foodApp = "Food App";
   final Color bgColor = const Color.fromARGB(255, 6, 10, 24);
   final Color secondColor = const Color.fromARGB(255, 254, 104, 4);
   Map<String, String> foodList = {burgerPNG: burger, pizzaPNG: pizza, spaghettiPNG: spaghetti, beytiPNG: beyti};
@@ -24,4 +25,8 @@ class Sizes {
   static const double size = 25;
   static const double size4x = 100;
   static const double size5x = 15;
+}
+
+class PaddingClass {
+  static const EdgeInsets horizontal2x = EdgeInsets.symmetric(horizontal: 30);
 }

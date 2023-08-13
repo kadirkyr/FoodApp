@@ -22,3 +22,13 @@ class CoreButton extends StatelessWidget {
         ));
   }
 }
+
+class CoreIconButton extends StatelessWidget {
+  const CoreIconButton({super.key, required this.onPressed, required this.icon});
+  final void Function() onPressed;
+  final Icon icon;
+  @override
+  Widget build(BuildContext context) {
+    return Card(color: ConstantsString().secondColor, child: IconButton(onPressed: onPressed, icon: icon));
+  }
+}

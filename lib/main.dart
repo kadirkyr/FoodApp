@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_choose/core/constants.dart';
 import 'package:food_choose/food_chose.dart';
 
 void main(List<String> args) {
@@ -14,12 +15,12 @@ class MyApp extends StatelessWidget {
       home: const CustomDemo(),
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
-        textTheme: const TextTheme(headlineMedium: TextStyle(color: Colors.white, fontWeight: FontWeight.w600)),
-        appBarTheme: const AppBarTheme(
-          color: Colors.transparent,
-          elevation: 0,
-        ),
-      ),
+          textTheme: const TextTheme(headlineMedium: TextStyle(color: Colors.white, fontWeight: FontWeight.w600)),
+          appBarTheme: const AppBarTheme(
+            color: Colors.transparent,
+            elevation: 0,
+          ),
+          progressIndicatorTheme: ProgressIndicatorThemeData(color: ConstantsString().secondColor)),
     );
   }
 }
