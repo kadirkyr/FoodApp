@@ -18,17 +18,13 @@ class _CustomDemoState extends State<CustomDemo> {
     return Scaffold(
       backgroundColor: ConstantsString().bgColor,
       appBar: AppBar(
-        title: Column(
-          children: [
-            Text(
-              ConstantsString.foodApp,
-              textAlign: TextAlign.start,
-              style: Theme.of(context).textTheme.headlineMedium,
-            )
-          ],
-        ),
-        toolbarHeight: Sizes.size4x,
-      ),
+          title: Column(
+            children: [
+              Text(ConstantsString.foodApp,
+                  textAlign: TextAlign.start, style: Theme.of(context).textTheme.headlineMedium)
+            ],
+          ),
+          toolbarHeight: Sizes.size4x),
       body: Padding(
         padding: PaddingClass.horizontal2x,
         child: Column(
@@ -90,7 +86,7 @@ class _CustomDemoState extends State<CustomDemo> {
           ConstantsString().foodList.values.toList()[_currentFoodIndex],
           style: const TextStyle(fontSize: Sizes.size),
         ),
-        Divider(height: 40, color: ConstantsString().secondColor),
+        Divider(height: Sizes.size, color: ConstantsString().secondColor),
       ],
     );
   }

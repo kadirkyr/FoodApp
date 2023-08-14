@@ -29,6 +29,14 @@ class CoreIconButton extends StatelessWidget {
   final Icon icon;
   @override
   Widget build(BuildContext context) {
-    return Card(color: ConstantsString().secondColor, child: IconButton(onPressed: onPressed, icon: icon));
+    return Card(
+        color: ConstantsString().secondColor,
+        shape: const CircleBorder(),
+        child: IconButton(
+          onPressed: onPressed,
+          icon: icon,
+          splashColor: Colors.transparent,
+          splashRadius: 1,
+        ));
   }
 }
