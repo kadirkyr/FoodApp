@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_choose/foods.dart';
 
 class ConstantsString {
   static const String burgerPNG =
@@ -13,18 +14,32 @@ class ConstantsString {
   static const String letsExplore = "Let's Explore";
   static const String weHaveSpecialFood = "We Have\nSpecial Food";
   static const String foodApp = "Food App";
-  final Color bgColor = const Color.fromARGB(255, 6, 10, 24);
-  final Color secondColor = const Color.fromARGB(255, 254, 104, 4);
-  Map<String, String> foodList = {burgerPNG: burger, pizzaPNG: pizza, spaghettiPNG: spaghetti, beytiPNG: beyti};
+  static const String burgerContent =
+      "We make the best burger in town. You will love the taste of veal, which we decorate with smoked veal and cheddar cheese.";
+
+  static const String pizzaContent = "Hamburger best asjdkalsjdkl askldjkalsj aksdjklasjd lkasdjlk";
+  static const String beytiContent = "Hamburger best asjdkalsjdkl askldjkalsj aksdjklasjd lkasdjlk";
+  static const String spaghettiContent = "Hamburger best asjdkalsjdkl askldjkalsj aksdjklasjd lkasdjlk";
+  static const String addTheBasket = "Add the basket";
+  static const Color bgColor = Color.fromARGB(255, 6, 10, 24);
+  static const Color secondColor = Color.fromARGB(255, 254, 104, 4);
+  final List<Foods> foodlist = [
+    Foods(name: burger, png: burgerPNG, content: burgerContent, price: 30),
+    Foods(name: pizza, png: pizzaPNG, content: pizzaContent, price: 50),
+    Foods(name: beyti, png: beytiPNG, content: beytiContent, price: 35),
+    Foods(name: spaghetti, png: spaghettiPNG, content: spaghettiContent, price: 25)
+  ];
 }
 
 class Sizes {
   static const double size8x = 200;
-  static const double size2x = 50;
-  static const double size3x = 75;
+  static const double size35 = 35;
+  static const double size75 = 75;
   static const double size = 25;
-  static const double size4x = 100;
-  static const double size5x = 15;
+
+  static const double size250 = 250;
+  static const double size300 = 300;
+  static const double size350 = 350;
 }
 
 class PaddingClass {

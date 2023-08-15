@@ -2,17 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:food_choose/core/constants.dart';
 
 class CoreButton extends StatelessWidget {
-  const CoreButton({super.key, required this.text, required this.onPressed});
-
+  const CoreButton({super.key, required this.text, required this.onPressed, this.color = ConstantsString.secondColor});
+  final Color color;
   final String text;
   final void Function() onPressed;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
         width: MediaQuery.of(context).size.width,
+        height: 50,
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
-              backgroundColor: ConstantsString().secondColor,
+              backgroundColor: color,
               shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(40)))),
           onPressed: onPressed,
           child: Text(
@@ -30,7 +31,7 @@ class CoreIconButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-        color: ConstantsString().secondColor,
+        color: ConstantsString.secondColor,
         shape: const CircleBorder(),
         child: IconButton(
           onPressed: onPressed,

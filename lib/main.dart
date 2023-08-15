@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:food_choose/core/constants.dart';
 import 'package:food_choose/food_chose.dart';
 
@@ -15,12 +16,20 @@ class MyApp extends StatelessWidget {
       home: const CustomDemo(),
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
-          textTheme: const TextTheme(headlineMedium: TextStyle(color: Colors.white, fontWeight: FontWeight.w600)),
-          appBarTheme: const AppBarTheme(
-            color: Colors.transparent,
-            elevation: 0,
-          ),
-          progressIndicatorTheme: ProgressIndicatorThemeData(color: ConstantsString().secondColor)),
+        scaffoldBackgroundColor: ConstantsString.bgColor,
+        textTheme: const TextTheme(
+            headlineMedium: TextStyle(color: Colors.white, fontWeight: FontWeight.w600, fontSize: Sizes.size35),
+            headlineSmall: TextStyle(color: Colors.white, fontWeight: FontWeight.w600, fontSize: Sizes.size)),
+        appBarTheme: AppBarTheme(
+          systemOverlayStyle: SystemUiOverlayStyle.light,
+          color: Colors.transparent,
+          toolbarHeight: Sizes.size75,
+          titleTextStyle: Theme.of(context).textTheme.headlineMedium?.copyWith(color: Colors.white),
+          elevation: 0,
+        ),
+        cardTheme: const CardTheme(elevation: 0, color: Colors.transparent),
+        progressIndicatorTheme: const ProgressIndicatorThemeData(color: ConstantsString.secondColor),
+      ),
     );
   }
 }

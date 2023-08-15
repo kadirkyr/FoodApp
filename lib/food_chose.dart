@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:food_choose/core/image_network.dart';
 
+import 'core/button.dart';
 import 'core/constants.dart';
-import 'core/widgets/button.dart';
+import 'food_content.dart';
+
+int currentFoodIndex = 0;
 
 class CustomDemo extends StatefulWidget {
   const CustomDemo({super.key});
@@ -11,20 +15,19 @@ class CustomDemo extends StatefulWidget {
 }
 
 class _CustomDemoState extends State<CustomDemo> {
-  int _currentFoodIndex = 0;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ConstantsString().bgColor,
       appBar: AppBar(
-          title: Column(
-            children: [
-              Text(ConstantsString.foodApp,
-                  textAlign: TextAlign.start, style: Theme.of(context).textTheme.headlineMedium)
-            ],
-          ),
-          toolbarHeight: Sizes.size4x),
+        title: const Column(
+          children: [
+            Text(
+              ConstantsString.foodApp,
+              textAlign: TextAlign.start,
+            )
+          ],
+        ),
+      ),
       body: Padding(
         padding: PaddingClass.horizontal2x,
         child: Column(
@@ -49,6 +52,15 @@ class _CustomDemoState extends State<CustomDemo> {
                         context: context,
                         builder: (context) => const Center(child: CircularProgressIndicator()),
                       );
+                      Future.delayed(const Duration(milliseconds: 300), () {
+                        Navigator.pop(context); // Dialog kapatılıyor
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const FoodContent(),
+                          ),
+                        );
+                      });
                     },
                   ),
                 )),
@@ -67,44 +79,36 @@ class _CustomDemoState extends State<CustomDemo> {
           children: [
             CoreIconButton(onPressed: _foodChangeBack, icon: const Icon(Icons.chevron_left_outlined)),
             Card(
-              color: Colors.transparent,
-              elevation: 0,
-              shape: const CircleBorder(),
-              child: Container(
-                child: Image.network(
-                  ConstantsString().foodList.keys.toList()[_currentFoodIndex],
-                  fit: BoxFit.contain,
-                  height: Sizes.size8x,
-                  width: Sizes.size8x,
-                ),
-              ),
-            ),
+                color: Colors.transparent,
+                elevation: 0,
+                shape: const CircleBorder(),
+                child: ImageNetwork(image: ConstantsString().foodlist[currentFoodIndex].png)),
             CoreIconButton(onPressed: _foodChangeForward, icon: const Icon(Icons.chevron_right_outlined))
           ],
         ),
         Text(
-          ConstantsString().foodList.values.toList()[_currentFoodIndex],
+          ConstantsString().foodlist[currentFoodIndex].name,
           style: const TextStyle(fontSize: Sizes.size),
         ),
-        Divider(height: Sizes.size, color: ConstantsString().secondColor),
+        const Divider(height: Sizes.size, color: ConstantsString.secondColor),
       ],
     );
   }
 
   void _foodChangeForward() {
     setState(() {
-      _currentFoodIndex++;
-      if (_currentFoodIndex >= ConstantsString().foodList.keys.length) {
-        _currentFoodIndex = 0;
+      currentFoodIndex++;
+      if (currentFoodIndex >= ConstantsString().foodlist.length) {
+        currentFoodIndex = 0;
       }
     });
   }
 
   void _foodChangeBack() {
     setState(() {
-      _currentFoodIndex--;
-      if (_currentFoodIndex < 0) {
-        _currentFoodIndex = ConstantsString().foodList.keys.length - 1;
+      currentFoodIndex--;
+      if (currentFoodIndex < 0) {
+        currentFoodIndex = ConstantsString().foodlist.length - 1;
       }
     });
   }
