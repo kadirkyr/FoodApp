@@ -4,6 +4,7 @@ import 'package:food_choose/core/image_network.dart';
 import 'core/button.dart';
 import 'core/constants.dart';
 import 'food_content.dart';
+import 'foods.dart';
 
 int currentFoodIndex = 0;
 
@@ -22,7 +23,7 @@ class _CustomDemoState extends State<CustomDemo> {
         title: const Column(
           children: [
             Text(
-              ConstantsString.foodApp,
+              ProjectKeys.foodApp,
               textAlign: TextAlign.start,
             )
           ],
@@ -38,7 +39,7 @@ class _CustomDemoState extends State<CustomDemo> {
             ),
             Expanded(
                 flex: 12,
-                child: Text(ConstantsString.weHaveSpecialFood,
+                child: Text(ProjectKeys.weHaveSpecialFood,
                     textAlign: TextAlign.center, style: Theme.of(context).textTheme.headlineMedium)),
             const Spacer(flex: 12),
             Expanded(
@@ -46,7 +47,7 @@ class _CustomDemoState extends State<CustomDemo> {
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: CoreButton(
-                    text: ConstantsString.letsExplore,
+                    text: ProjectKeys.letsExplore,
                     onPressed: () {
                       showDialog(
                         context: context,
@@ -82,15 +83,15 @@ class _CustomDemoState extends State<CustomDemo> {
                 color: Colors.transparent,
                 elevation: 0,
                 shape: const CircleBorder(),
-                child: ImageNetwork(image: ConstantsString().foodlist[currentFoodIndex].png)),
+                child: ImageNetwork(image: foodlist[currentFoodIndex].png)),
             CoreIconButton(onPressed: _foodChangeForward, icon: const Icon(Icons.chevron_right_outlined))
           ],
         ),
         Text(
-          ConstantsString().foodlist[currentFoodIndex].name,
-          style: const TextStyle(fontSize: Sizes.size),
+          foodlist[currentFoodIndex].name,
+          style: const TextStyle(fontSize: Sizes.size25),
         ),
-        const Divider(height: Sizes.size, color: ConstantsString.secondColor),
+        const Divider(height: Sizes.size25, color: ProjectColors.secondColor),
       ],
     );
   }
@@ -98,7 +99,7 @@ class _CustomDemoState extends State<CustomDemo> {
   void _foodChangeForward() {
     setState(() {
       currentFoodIndex++;
-      if (currentFoodIndex >= ConstantsString().foodlist.length) {
+      if (currentFoodIndex >= foodlist.length) {
         currentFoodIndex = 0;
       }
     });
@@ -108,7 +109,7 @@ class _CustomDemoState extends State<CustomDemo> {
     setState(() {
       currentFoodIndex--;
       if (currentFoodIndex < 0) {
-        currentFoodIndex = ConstantsString().foodlist.length - 1;
+        currentFoodIndex = foodlist.length - 1;
       }
     });
   }

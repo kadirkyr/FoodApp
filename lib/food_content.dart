@@ -4,6 +4,7 @@ import 'core/button.dart';
 import 'core/constants.dart';
 import 'core/image_network.dart';
 import 'food_chose.dart';
+import 'foods.dart';
 
 class FoodContent extends StatefulWidget {
   const FoodContent({super.key});
@@ -17,7 +18,7 @@ class _FoodContentState extends State<FoodContent> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(ConstantsString().foodlist[currentFoodIndex].name),
+        title: Text(foodlist[currentFoodIndex].name),
         actions: [IconButton(onPressed: () {}, icon: const Icon(Icons.shopping_cart_checkout_outlined))],
       ),
       body: Column(children: [
@@ -26,11 +27,11 @@ class _FoodContentState extends State<FoodContent> {
           child: Column(
             children: [
               ImageNetwork(
-                image: ConstantsString().foodlist[currentFoodIndex].png,
+                image: foodlist[currentFoodIndex].png,
                 height: Sizes.size250,
                 width: Sizes.size250,
               ),
-              Text("Price: ${ConstantsString().foodlist[currentFoodIndex].price.toInt()}\$",
+              Text("Price: ${foodlist[currentFoodIndex].price.toInt()}\$",
                   style: Theme.of(context).textTheme.headlineSmall),
             ],
           ),
@@ -40,27 +41,27 @@ class _FoodContentState extends State<FoodContent> {
           child: Card(
             shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(50))),
             elevation: 0,
-            color: ConstantsString.secondColor,
+            color: ProjectColors.secondColor,
             child: Padding(
               padding: PaddingClass.horizontal2x,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Text(
-                    ConstantsString().foodlist[currentFoodIndex].content,
+                    foodlist[currentFoodIndex].content,
                     textAlign: TextAlign.start,
                     style: Theme.of(context).textTheme.headlineSmall,
                   ),
                   CoreButton(
-                    text: ConstantsString.addTheBasket,
+                    text: ProjectKeys.addTheBasket,
                     onPressed: () {},
-                    color: ConstantsString.bgColor,
+                    color: ProjectColors.bgColor,
                   )
                 ],
               ),
             ),
           ),
-        )
+        ),
       ]),
     );
   }
