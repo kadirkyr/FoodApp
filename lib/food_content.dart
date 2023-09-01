@@ -1,25 +1,35 @@
 import 'package:flutter/material.dart';
+import 'package:food_choose/shopping_view.dart';
 
 import 'core/button.dart';
-import 'core/constants.dart';
 import 'core/image_network.dart';
 import 'food_chose.dart';
-import 'foods.dart';
+import 'products/language/constants.dart';
+import 'products/language/foods.dart';
 
-class FoodContent extends StatefulWidget {
+class FoodContent extends StatelessWidget {
   const FoodContent({super.key});
 
-  @override
-  State<FoodContent> createState() => _FoodContentState();
-}
+  void addToBasket() {
+    basketItems.add(foodlist[currentFoodIndex]);
+  }
 
-class _FoodContentState extends State<FoodContent> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(foodlist[currentFoodIndex].name),
-        actions: [IconButton(onPressed: () {}, icon: const Icon(Icons.shopping_cart_checkout_outlined))],
+        actions: [
+          IconButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ShoppingView(),
+                    ));
+              },
+              icon: const Icon(Icons.shopping_cart_sharp))
+        ],
       ),
       body: Column(children: [
         Expanded(
@@ -54,7 +64,9 @@ class _FoodContentState extends State<FoodContent> {
                   ),
                   CoreButton(
                     text: ProjectKeys.addTheBasket,
-                    onPressed: () {},
+                    onPressed: () {
+                      addToBasket();
+                    },
                     color: ProjectColors.bgColor,
                   )
                 ],

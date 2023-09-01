@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ProjectKeys {
+  static const String baskInfo = "Inside of Basket";
   static const String burgerPNG =
       "https://static.vecteezy.com/system/resources/previews/021/665/613/original/beef-burger-isolated-png.png";
   static const String pizzaPNG = "https://www.pizza-piece.com/wp-content/uploads/2020/07/cropped-sucuklu-pizza.png";

@@ -1,21 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:food_choose/core/image_network.dart';
 
 import 'core/button.dart';
-import 'core/constants.dart';
+import 'products/language/constants.dart';
+import 'core/image_network.dart';
 import 'food_content.dart';
-import 'foods.dart';
+import 'products/language/foods.dart';
 
 int currentFoodIndex = 0;
 
-class CustomDemo extends StatefulWidget {
+class CustomDemo extends StatelessWidget {
   const CustomDemo({super.key});
 
-  @override
-  State<CustomDemo> createState() => _CustomDemoState();
-}
-
-class _CustomDemoState extends State<CustomDemo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,7 +28,7 @@ class _CustomDemoState extends State<CustomDemo> {
         padding: PaddingClass.horizontal2x,
         child: Column(
           children: [
-            Expanded(flex: 35, child: _ChangeFoodColumn()),
+            const Expanded(flex: 35, child: FoodChooseRow()),
             const Spacer(
               flex: 10,
             ),
@@ -71,8 +66,18 @@ class _CustomDemoState extends State<CustomDemo> {
       ),
     );
   }
+}
 
-  Column _ChangeFoodColumn() {
+class FoodChooseRow extends StatefulWidget {
+  const FoodChooseRow({super.key});
+
+  @override
+  State<FoodChooseRow> createState() => _FoodChooseRowState();
+}
+
+class _FoodChooseRowState extends State<FoodChooseRow> {
+  @override
+  Widget build(BuildContext context) {
     return Column(
       children: [
         Row(

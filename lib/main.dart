@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:food_choose/core/constants.dart';
+import 'package:food_choose/products/language/constants.dart';
 import 'package:food_choose/food_chose.dart';
 
 void main(List<String> args) {

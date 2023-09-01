@@ -1,12 +1,11 @@
-import 'core/constants.dart';
+import 'constants.dart';
 
 class Foods {
-  Foods({this.productCount = 0, required this.content, required this.name, required this.png, required this.price});
+  Foods({required this.content, required this.name, required this.png, required this.price});
   final String name;
   final String png;
   final String content;
-  final double price;
-  final int productCount;
+  final int price;
 }
 
 final List<Foods> foodlist = [
@@ -15,3 +14,5 @@ final List<Foods> foodlist = [
   Foods(name: ProjectKeys.beyti, png: ProjectKeys.beytiPNG, content: ProjectKeys.beytiContent, price: 35),
   Foods(name: ProjectKeys.spaghetti, png: ProjectKeys.spaghettiPNG, content: ProjectKeys.spaghettiContent, price: 25)
 ];
+
+List<Foods> basketItems = [];

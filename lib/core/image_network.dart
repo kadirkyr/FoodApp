@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'constants.dart';
+import '../products/language/constants.dart';
 
 class ImageNetwork extends StatelessWidget {
   const ImageNetwork({super.key, required this.image, this.width = Sizes.size8x, this.height = Sizes.size8x});
