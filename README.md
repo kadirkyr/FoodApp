@@ -1,9 +1,6 @@
-# **QUIZ APP**
+# **FOOD APP**
 
 ## **I developed quiz app without Firebase.**
 
-| ![Resim 1](https://github.com/kadirkyr/FoodApp/assets/126793336/ecb1a90f-189d-4802-abec-15bff7592e17) | ![Resim 2](https://github.com/kadirkyr/quiz_app/assets/126793336/8abcf59c-ef73-404b-a284-06ba85942bf9) |
-|-------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------|
-| ![Resim 3](https://github.com/kadirkyr/quiz_app/assets/126793336/ee136fb8-3e71-453a-9b0b-c30c0fb9d8a2) | ![Resim 4](https://github.com/kadirkyr/quiz_app/assets/126793336/f1d2aaed-e2d7-47d3-ab5c-0b8635163cc5) |
 
-
+<img width="1068" alt="Ekran Resmi 2023-10-18 16 15 57" src="https://github.com/kadirkyr/FoodApp/assets/126793336/04e6c45a-ba17-48c1-93df-8816534b7080">
