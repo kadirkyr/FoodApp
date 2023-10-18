@@ -1,16 +1,9 @@
-# food_choose
+# **QUIZ APP**
 
-A new Flutter project.
+## **I developed quiz app without Firebase.**
 
-## Getting Started
+| ![Resim 1]([https://github.com/kadirkyr/quiz_app/assets/126793336/975f4c84-6fd0-4a56-b779-49ca66625800](https://github.com/kadirkyr/FoodApp/assets/126793336/ecb1a90f-189d-4802-abec-15bff7592e17)) | ![Resim 2](https://github.com/kadirkyr/quiz_app/assets/126793336/8abcf59c-ef73-404b-a284-06ba85942bf9) |
+|-------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------|
+| ![Resim 3](https://github.com/kadirkyr/quiz_app/assets/126793336/ee136fb8-3e71-453a-9b0b-c30c0fb9d8a2) | ![Resim 4](https://github.com/kadirkyr/quiz_app/assets/126793336/f1d2aaed-e2d7-47d3-ab5c-0b8635163cc5) |
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
