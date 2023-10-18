@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food_app/core/buttons/icon_button.dart';
+import 'package:food_choose/core/buttons/icon_button.dart';
 
 import '../../core/buttons/elevated_button.dart';
 import '../../core/image_widget.dart';

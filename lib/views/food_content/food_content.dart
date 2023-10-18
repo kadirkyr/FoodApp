@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food_app/views/cart_inside/cart_view.dart';
+import 'package:food_choose/views/cart_inside/cart_view.dart';
 
 import '../../core/buttons/elevated_button.dart';
 import '../../core/image_widget.dart';

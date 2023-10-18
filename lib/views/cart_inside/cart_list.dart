@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:food_app/core/buttons/elevated_button.dart';
-import 'package:food_app/core/image_widget.dart';
-import 'package:food_app/products/language/constants.dart';
+import 'package:food_choose/core/buttons/elevated_button.dart';
+import 'package:food_choose/core/image_widget.dart';
+import 'package:food_choose/products/language/constants.dart';
 
 import '../../products/language/foods.dart';
 

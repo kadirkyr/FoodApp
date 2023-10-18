@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:food_app/products/language/constants.dart';
-import 'package:food_app/views/cart_inside/cart_list.dart';
-
-import '../../core/image_widget.dart';
+import 'package:food_choose/products/language/constants.dart';
+import 'package:food_choose/views/cart_inside/cart_list.dart';
 
 class ShoppingView extends StatefulWidget {
   const ShoppingView({super.key});
@@ -20,4 +18,3 @@ class _ShoppingViewState extends State<ShoppingView> {
     );
   }
 }
-

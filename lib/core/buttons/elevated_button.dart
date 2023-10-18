@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food_app/products/language/constants.dart';
+import 'package:food_choose/products/language/constants.dart';
 
 class CoreButton extends StatelessWidget {
   const CoreButton({super.key, required this.text, required this.onPressed, this.color = ProjectColors.secondColor});
