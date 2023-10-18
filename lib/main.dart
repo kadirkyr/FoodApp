@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:food_choose/views/food_chose.dart';
-import 'package:food_choose/products/language/constants.dart';
+import 'package:food_app/products/language/constants.dart';
+import 'package:food_app/views/food_choose/food_chose.dart';
 
 void main(List<String> args) {
   runApp(const MyApp());

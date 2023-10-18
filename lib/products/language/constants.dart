@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ProjectKeys {
+  static const String emptyCartPNG = "assets/images/emptyCard.png";
   static const String baskInfo = "Inside of Cart";
   static const String burgerPNG = "assets/images/burger.webp";
   static const String pizzaPNG = "assets/images/pizza.png";
