@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food_choose/core/buttons/elevated_button.dart';
 import 'package:food_choose/core/image_widget.dart';
 import 'package:food_choose/products/language/constants.dart';
+import 'package:food_choose/views/payment/payment_view.dart';
 
 import '../../products/language/foods.dart';
 
@@ -58,7 +59,16 @@ class _CartListViewState extends State<CartListView> {
         child: Padding(
           padding: PaddingClass.horizontal2x,
           child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-            Expanded(flex: 3, child: CoreButton(onPressed: () {}, text: "Checkout", color: ProjectColors.bgColor)),
+            Expanded(
+                flex: 3,
+                child: CoreButton(
+                    onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const PaymentView(),
+                      ));
+                    },
+                    text: "Checkout",
+                    color: ProjectColors.bgColor)),
             Expanded(
                 flex: 2,
                 child: Text("${totalPrice.toString()}\$",

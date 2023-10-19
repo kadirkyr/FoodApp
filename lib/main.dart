@@ -16,6 +16,11 @@ class MyApp extends StatelessWidget {
       home: const CustomDemo(),
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
+        useMaterial3: true,
+        inputDecorationTheme: const InputDecorationTheme(
+            hintStyle: TextStyle(fontSize: 24),
+            labelStyle: TextStyle(color: ProjectColors.secondColor, fontSize: 24),
+            suffixIconColor: ProjectColors.secondColor),
         listTileTheme: const ListTileThemeData(titleTextStyle: TextStyle(fontSize: 20)),
         scaffoldBackgroundColor: ProjectColors.bgColor,
         textTheme: const TextTheme(
