@@ -14,7 +14,7 @@ class CreditCardTextField extends StatelessWidget {
     return TextField(
       style: const TextStyle(fontSize: 25, letterSpacing: 0),
       buildCounter: (context, {required currentLength, required isFocused, maxLength}) {
-        if (currentLength == 19) {
+        if (currentLength == 16) {
           return const Icon(
             Icons.credit_score_rounded,
             color: Colors.green,
