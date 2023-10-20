@@ -16,8 +16,14 @@ class MyApp extends StatelessWidget {
       home: const CustomDemo(),
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
+        textSelectionTheme: const TextSelectionThemeData(
+            cursorColor: ProjectColors.secondColor, selectionColor: ProjectColors.secondColor),
         useMaterial3: true,
         inputDecorationTheme: const InputDecorationTheme(
+            enabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: ProjectColors.secondColor)),
+            focusedBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: ProjectColors.secondColor),
+                borderRadius: BorderRadius.all(Radius.circular(10))),
             hintStyle: TextStyle(fontSize: 24),
             labelStyle: TextStyle(color: ProjectColors.secondColor, fontSize: 24),
             suffixIconColor: ProjectColors.secondColor),
