@@ -4,53 +4,58 @@ import 'package:food_choose/views/payment/payment.dart';
 
 class PaymentView extends StatelessWidget {
   const PaymentView({super.key});
-
+  static const String _title = "Checkout";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Checkout"),
+        title: const Text(_title),
       ),
       body: Padding(
         padding: PaddingClass.horizontal2x,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            Column(
-              children: [
-                const CreditCardTextField(),
-                Padding(
-                  padding: const EdgeInsets.only(left: 60),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Expanded(
-                        flex: 1,
-                        child: expireDateRow(),
-                      ),
-                      const Expanded(
-                          child: Padding(
-                        padding: EdgeInsets.only(right: 60),
-                        child: TextField(
-                            keyboardType: TextInputType.number,
-                            maxLength: 3,
-                            decoration: InputDecoration(
-                              counterText: "",
-                              hintText: "CVV",
-                              contentPadding: EdgeInsets.all(10),
-                              isDense: true,
-                              hintStyle: TextStyle(fontSize: 18),
-                            )),
-                      ))
-                    ],
-                  ),
-                )
-              ],
-            ),
-          ],
+        child: ListView(
+          children: [Expanded(child: cardColumn()), Expanded(child: Container())],
         ),
       ),
+    );
+  }
+
+  Column cardColumn() {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      children: [
+        Expanded(flex: 2, child: CheckoutTextField(isNumber: false)),
+        const Spacer(flex: 1),
+        Expanded(flex: 2, child: CheckoutTextField()),
+        Expanded(
+          flex: 1,
+          child: Padding(
+            padding: const EdgeInsets.only(left: 60),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Expanded(
+                  child: expireDateRow(),
+                ),
+                const Expanded(
+                    child: Padding(
+                  padding: EdgeInsets.only(right: 60),
+                  child: TextField(
+                      keyboardType: TextInputType.number,
+                      maxLength: 3,
+                      decoration: InputDecoration(
+                          counterText: "",
+                          hintText: "CVV",
+                          contentPadding: EdgeInsets.all(10),
+                          isDense: true,
+                          hintStyle: TextStyle(fontSize: 18))),
+                ))
+              ],
+            ),
+          ),
+        )
+      ],
     );
   }
 

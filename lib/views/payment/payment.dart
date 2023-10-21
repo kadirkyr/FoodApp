@@ -2,38 +2,49 @@ import 'package:flutter/material.dart';
 
 import '../../products/language/constants.dart';
 
-class CreditCardTextField extends StatelessWidget {
-  const CreditCardTextField({
+class CheckoutTextField extends StatelessWidget {
+  CheckoutTextField({
     super.key,
+    this.isNumber = true,
   });
-  final String labelText = "Credit Card Number";
-  final String hintText = "**** **** **** ****";
+
+  static const String creditLabel = "Credit Card Number";
+  static const personLabel = "Name Surname";
+  static const creditHint = "**** **** **** ****";
+  static const personHint = "James Barnes";
+  late final int maxLength = isNumber ? 16 : 24;
+  static const double fontSize = 22;
+  final bool isNumber;
+  static const Icon personIcon = Icon(Icons.person_2_rounded);
+  static const Icon creditCardIcon = Icon(Icons.credit_card_rounded);
 
   @override
   Widget build(BuildContext context) {
     return TextField(
-      style: const TextStyle(fontSize: 25, letterSpacing: 0),
+      textInputAction: isNumber ? TextInputAction.done : TextInputAction.next,
+      style: const TextStyle(fontSize: fontSize),
       buildCounter: (context, {required currentLength, required isFocused, maxLength}) {
-        if (currentLength == 16) {
-          return const Icon(
-            Icons.credit_score_rounded,
-            color: Colors.green,
-          );
+        if (currentLength == maxLength) {
+          return isNumber
+              ? const Icon(
+                  Icons.credit_score_rounded,
+                  color: Colors.green,
+                )
+              : null;
         }
         return null;
       },
       cursorColor: ProjectColors.secondColor,
-      cursorOpacityAnimates: true,
-      maxLength: 16,
-      keyboardType: TextInputType.number,
+      maxLength: maxLength,
+      keyboardType: isNumber ? TextInputType.number : TextInputType.text,
       decoration: InputDecoration(
           focusedBorder: const OutlineInputBorder(
               borderSide: BorderSide(color: ProjectColors.secondColor),
               borderRadius: BorderRadius.all(Radius.circular(10))),
           isDense: false,
-          suffixIcon: const Icon(Icons.credit_card),
-          hintText: hintText,
-          labelText: labelText),
+          suffixIcon: isNumber ? creditCardIcon : personIcon,
+          hintText: isNumber ? creditHint : personHint,
+          labelText: isNumber ? creditLabel : personLabel),
     );
   }
 }
